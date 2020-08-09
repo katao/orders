@@ -17,10 +17,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "org.orders.dkataoka.app",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "org.orders.dkataoka.app",
+      "permissions": [],
+      "versionCode": 1
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "versionCode": 1
     }
   }
 }

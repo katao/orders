@@ -1,21 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import EventListener from 'react-event-listener';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import HalfScreen from './screens/half';
+import OrderScreen from './screens/order';
+
+const MainStack = createStackNavigator(
+  {
+    Order: OrderScreen,
+    Half: HalfScreen,
+  }
+)
+
+const AppContainer = createAppContainer(MainStack)
+
+export default class App extends Component {
+  render() {
+    return (<AppContainer />);
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
